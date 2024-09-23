@@ -13,7 +13,7 @@ const SummaryComponent = () => {
       const response = await fetch('/api/generate-summary', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: inputText }),  
+        body: JSON.stringify({ videoURL: inputText }),  
     });
 
     const data = await response.json();
@@ -28,16 +28,16 @@ const SummaryComponent = () => {
   return (
     <div>
       <h1>Lecture Summary</h1>
-      <p>{summary}</p>  {/* Display the fetched summary */}
       <textarea
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
-        placeholder='Type HERE'
+        placeholder='Enter Youtube URL'
         rows="4"
         cols="50"
       >  
       </textarea>
       <button onClick={handleGenerateSummary}>GENERATE BUTTON</button>
+      <p>{summary}</p>  {/* Display the fetched summary */}
     </div>
   );
 };
