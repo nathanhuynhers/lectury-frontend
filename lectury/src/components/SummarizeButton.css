@@ -1,0 +1,16 @@
+.summarize-btn {
+    background-color: #AA38E1;
+    color: #4D1A66;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-family: 'Satoshi', sans-serif;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .summarize-btn:hover {
+    background-color: #7B28A3;
+  }
+  

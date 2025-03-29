@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import SummarizeButton from './SummarizeButton';
+import './YoutubeLinkToSummary.css';
 
 const YoutubeLinkToSummary = ({ setSummary }) => {
   const [inputText, setInputText] = useState('')
@@ -34,8 +36,7 @@ const YoutubeLinkToSummary = ({ setSummary }) => {
         cols="50"
       >  
       </textarea>
-      <button onClick={handleGenerateSummary}>GENERATE BUTTON</button>
-      {/* <p>{summary}</p>  Display the fetched summary */}
+      <SummarizeButton onClick={handleGenerateSummary}>Summarize</SummarizeButton>
     </div>
   );
 };

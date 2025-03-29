@@ -1,0 +1,27 @@
+.main-page {
+    background-color: #1D1E1E;
+    color: #fff;
+    padding-top: 80px;
+    text-align: center;
+    min-height: 100vh;
+    padding-bottom: 40px;
+  }
+  
+  .main-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .brand {
+    color: #a855f7;
+  }
+  
+  .subtext {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto 40px;
+  }
+  
