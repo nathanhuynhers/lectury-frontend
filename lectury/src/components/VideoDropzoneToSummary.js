@@ -4,7 +4,7 @@ import SelectFileButton from './SelectFileButton';
 import './VideoDropzoneToSummary.css';
 import CloudLogo from '../CloudLogo.svg';
 
-const VideoDropzoneToSummary = ({ setSummary }) => {
+const VideoDropzoneToSummary = ({ setSummary, summaryRef }) => {
   const [error, setError] = useState('');
 
   const onDrop = useCallback(async (acceptedFiles) => {
@@ -27,6 +27,12 @@ const VideoDropzoneToSummary = ({ setSummary }) => {
 
       if (res.ok) {
         setSummary(data.summary);
+
+        if (summaryRef?.current) {
+          setTimeout(() => {
+            summaryRef.current.scrollIntoView({ behavior: 'smooth' });
+          }, 100);
+        }
       } else {
         setError(data.error || 'Something went wrong.');
       }
@@ -35,7 +41,7 @@ const VideoDropzoneToSummary = ({ setSummary }) => {
       console.error(err);
       console.error(error)
     }
-  }, [setSummary, error]);
+  }, [setSummary, error, summaryRef]);
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,

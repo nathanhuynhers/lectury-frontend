@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SummarizeButton from './SummarizeButton';
 import './YoutubeLinkToSummary.css';
 
-const YoutubeLinkToSummary = ({ setSummary }) => {
+const YoutubeLinkToSummary = ({ setSummary, summaryRef }) => {
   const [inputText, setInputText] = useState('');
 
   const handleGenerateSummary = async () => {
@@ -17,6 +17,12 @@ const YoutubeLinkToSummary = ({ setSummary }) => {
 
       const data = await response.json();
       setSummary(data.summary);
+
+      if (summaryRef?.current) {
+        setTimeout(() => {
+          summaryRef.current.scrollIntoView({ behavior: 'smooth' });
+        }, 100); 
+      }
     } catch (error) {
       console.error('Error generating summary:', error);
     }
