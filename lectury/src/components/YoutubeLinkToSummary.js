@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
-const SummaryComponent = () => {
-  const [summary, setSummary] = useState('');
+const YoutubeLinkToSummary = ({ setSummary }) => {
   const [inputText, setInputText] = useState('')
 
   const handleGenerateSummary = async () => {
@@ -27,7 +26,6 @@ const SummaryComponent = () => {
 
   return (
     <div>
-      <h1>Lecture Summary</h1>
       <textarea
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
@@ -37,9 +35,9 @@ const SummaryComponent = () => {
       >  
       </textarea>
       <button onClick={handleGenerateSummary}>GENERATE BUTTON</button>
-      <p>{summary}</p>  {/* Display the fetched summary */}
+      {/* <p>{summary}</p>  Display the fetched summary */}
     </div>
   );
 };
 
-export default SummaryComponent;
+export default YoutubeLinkToSummary;

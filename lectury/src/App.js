@@ -1,10 +1,11 @@
 import './App.css';
-import SummaryComponent from './components/SummaryComponent'; 
+import MainPage from './components/MainPage';
+
 
 function App() {
   return (
     <div className="App">
-      <SummaryComponent/>  {/* Use the component here */}
+      <MainPage />
     </div>
   );
 }
