@@ -21,7 +21,7 @@
     line-height: 1.6;
     font-family: 'Satoshi', sans-serif;
     white-space: pre-wrap; /* preserve line breaks */
-    max-height: 400px;
+    height: auto;
     overflow-y: auto;
   }
 
