@@ -21,7 +21,13 @@ const MainPage = () => {
       </p>
 
       <YoutubeLinkToSummary setSummary={setSummary} />
+      <div className="divider-wrapper">
+        <div className="divider">
+          <span className="divider-text">or</span>
+        </div>
+      </div>
       <VideoDropzoneToSummary setSummary={setSummary} />
+      <div className="divider-line"></div>
       <SummaryDisplay summary={summary} />
     </div>
   );

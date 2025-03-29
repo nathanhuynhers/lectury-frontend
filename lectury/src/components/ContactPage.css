@@ -1,0 +1,98 @@
+.contact-page {
+    background-color: #1D1E1E;
+    color: white;
+    min-height: 100vh;
+    padding-bottom: 60px;
+  }
+  
+  .contact-content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 100px 24px 40px;
+    text-align: center;
+  }
+  
+  .contact-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #AA38E1;
+  }
+  
+  .contact-subtext {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 50px;
+  }
+  
+  .brand-purple {
+    color: #AA38E1;
+  }
+  
+  .contact-card {
+    border: 1.5px solid #AA38E1;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    background-color: #282929;
+    width: 50rem;
+    height: 25rem;
+    margin: 0 auto;
+  }
+
+  .contact-photo-wrapper {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    height: 300px;
+  }
+  
+  .contact-mascot {
+    position: absolute;
+    top: -60px;
+    left: -70px;
+    width: 165px;
+    height: auto;
+  }
+  
+  .contact-photo {
+    width: 300px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 2;
+    position: relative;
+  }
+
+  .contact-details {
+    padding-top: 50px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .contact-info {
+    text-align: left;
+    max-width: 300px;
+    margin-bottom: 30px;
+  }
+  
+  .contact-info-heading {
+    color: #AA38E1;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 30px;
+  }
+  
+  .contact-detail {
+    margin: 4px 0;
+    font-size: 20px;
+  }
+  

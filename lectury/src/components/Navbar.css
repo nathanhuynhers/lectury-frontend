@@ -30,6 +30,8 @@
     font-size: 2rem;
     font-weight: 600;
     color: #E7E7E7;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
   }
   
   .nav-right {
@@ -46,7 +48,13 @@
     transition: color 0.2s ease-in-out;
   }
   
-  .nav-link:hover {
+  .nav-link:hover, .title:hover {
     color: #7B28A3;
   }
   
+  .logo-title {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }

@@ -1,0 +1,72 @@
+.about-page {
+    background-color: #1D1E1E;
+    color: #ffffff;
+    font-family: 'Satoshi', sans-serif;
+    padding-top: 80px;
+    min-height: 100vh;
+  }
+  
+  .about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+  
+  .about-heading {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .brand-purple {
+    color: #AA38E1;
+  }
+  
+  .about-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+  }
+  
+  .about-divider {
+    border: none;
+    border-top: 3px solid #333;
+    margin: 40px 0 30px;
+  }
+  
+  .about-subheading {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .steps-container {
+    display: flex;
+    gap: 16px;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  
+  .step-card {
+    flex: 1 1 260px;
+    background-color: #262626;
+    border: 1.5px solid #a855f7;
+    border-radius: 12px;
+    padding: 20px;
+    color: #f1f1f1;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    min-width: 260px;
+  }
+  
+  .step-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  
+  .step-highlight {
+    color: #a855f7;
+  }
+  

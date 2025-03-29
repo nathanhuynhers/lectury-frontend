@@ -1,8 +1,10 @@
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
+import SelectFileButton from './SelectFileButton';
+import './VideoDropzoneToSummary.css';
+import CloudLogo from '../CloudLogo.svg';
 
 const VideoDropzoneToSummary = ({ setSummary }) => {
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
   const onDrop = useCallback(async (acceptedFiles) => {
@@ -12,7 +14,6 @@ const VideoDropzoneToSummary = ({ setSummary }) => {
     const formData = new FormData();
     formData.append('video', file); // Must match field name in multer
 
-    setLoading(true);
     setError('');
     setSummary('');
 
@@ -32,12 +33,11 @@ const VideoDropzoneToSummary = ({ setSummary }) => {
     } catch (err) {
       setError('Failed to upload or transcribe the file.');
       console.error(err);
-    } finally {
-      setLoading(false);
+      console.error(error)
     }
-  }, [setSummary]);
+  }, [setSummary, error]);
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+  const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     accept: {
       'video/mp4': ['.mp4'],
@@ -52,30 +52,16 @@ const VideoDropzoneToSummary = ({ setSummary }) => {
   });
 
   return (
-    <div>
-      <h2>Upload Audio or Video File for Summary</h2>
-
-      <div
-        {...getRootProps()}
-        style={{
-          border: '2px dashed #ccc',
-          padding: '30px',
-          borderRadius: '10px',
-          textAlign: 'center',
-          backgroundColor: isDragActive ? '#f0f8ff' : '#fafafa',
-          cursor: 'pointer'
-        }}
-      >
+    <div {...getRootProps()} className="dropzone-container">
+      <div className="dropzone">
         <input {...getInputProps()} />
-        {
-          isDragActive
-            ? <p>Drop the file here...</p>
-            : <p>Drag & drop a supported audio/video file here, or click to select one</p>
-        }
+        <img src={CloudLogo} alt="CloudLogo" className="dropzone-icon" />
+        <div className="dropzone-title">Drag and Drop a Supported File to Summarize</div>
+        <div className="dropzone-subtext">
+          Supports .mp4, .mp3, .wav, .m4a, .flac, .ogg, or .webm Files
+        </div>
+        <SelectFileButton>Select file</SelectFileButton>
       </div>
-
-      {loading && <p>Transcribing...</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 };

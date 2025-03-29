@@ -3,40 +3,37 @@ import SummarizeButton from './SummarizeButton';
 import './YoutubeLinkToSummary.css';
 
 const YoutubeLinkToSummary = ({ setSummary }) => {
-  const [inputText, setInputText] = useState('')
+  const [inputText, setInputText] = useState('');
 
   const handleGenerateSummary = async () => {
-    if (!inputText.trim()) {
-      throw new Error("Text Empty")
-    }
+    if (!inputText.trim()) return;
 
     try {
       const response = await fetch('/api/generate-summary', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ videoURL: inputText }),  
-    });
+        body: JSON.stringify({ videoURL: inputText })
+      });
 
-    const data = await response.json();
-    setSummary(data.summary)
-
-  } catch(error) {
-    console.error('Error generating summary:', error);
-  }
+      const data = await response.json();
+      setSummary(data.summary);
+    } catch (error) {
+      console.error('Error generating summary:', error);
+    }
   };
 
-
   return (
-    <div>
-      <textarea
+    <div className="youtube-form">
+      <input
+        type="text"
+        className="youtube-input"
+        placeholder="Paste a Youtube Link"
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
-        placeholder='Enter Youtube URL'
-        rows="4"
-        cols="50"
-      >  
-      </textarea>
-      <SummarizeButton onClick={handleGenerateSummary}>Summarize</SummarizeButton>
+      />
+      <SummarizeButton onClick={handleGenerateSummary}>
+        Summarize
+      </SummarizeButton>
     </div>
   );
 };

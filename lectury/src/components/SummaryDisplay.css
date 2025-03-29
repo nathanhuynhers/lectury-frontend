@@ -1,0 +1,39 @@
+.summary-wrapper {
+    margin: 40px auto;
+    max-width: 700px;
+    padding: 0 20px;
+  }
+  
+  .summary-heading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #fff;
+    text-align: left;
+  }
+  
+  .summary-box {
+    border: 1.5px solid #a855f7;
+    border-radius: 12px;
+    background-color: #2a2a2a;
+    padding: 24px;
+    color: #e0e0e0;
+    line-height: 1.6;
+    font-family: 'Satoshi', sans-serif;
+    white-space: pre-wrap; /* preserve line breaks */
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+  .summary-text {
+    text-align: left;
+  }
+  
+  .summary-box::-webkit-scrollbar {
+    width: 6px;
+  }
+  .summary-box::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+  }
+  

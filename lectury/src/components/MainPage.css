@@ -21,7 +21,43 @@
     font-size: 1.1rem;
     font-weight: 500;
     color: #ccc;
-    max-width: 600px;
+    max-width: 720px;
     margin: 0 auto 40px;
   }
+
+  .divider-wrapper {
+    max-width: 500px;
+    margin: 32px auto;
+  }
   
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+  }
+  
+  .divider::before,
+  .divider::after {
+    content: '';
+    flex: 1;
+    height: 3px;
+    background-color: #333;
+    margin: 0 12px;
+  }
+  
+  .divider-text {
+    color: #ccc;
+    font-size: 1.4rem;
+    font-family: 'Satoshi', sans-serif;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  .divider-line {
+    border: none;
+    height: 3px;
+    background-color: #333;
+    margin: 60px auto;
+    max-width: 700px;
+  }

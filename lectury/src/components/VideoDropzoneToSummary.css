@@ -1,0 +1,40 @@
+.dropzone-container {
+    border: 1.5px solid #a855f7;
+    border-radius: 16px;
+    padding: 40px 20px;
+    background-color: #2a2a2a;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 650px;
+  }
+
+.dropzone-container:hover {
+    cursor: pointer;
+  }
+  
+  .dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .dropzone-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+  
+  .dropzone-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  
+  .dropzone-subtext {
+    font-size: 0.875rem;
+    color: #ccc;
+    margin-bottom: 20px;
+  }
+  
