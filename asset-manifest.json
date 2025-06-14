@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/lectury-frontend/static/css/main.6879d1a2.css",
+    "main.js": "/lectury-frontend/static/js/main.860eee3d.js",
+    "static/js/453.04b37f38.chunk.js": "/lectury-frontend/static/js/453.04b37f38.chunk.js",
+    "static/media/profile-pic.svg": "/lectury-frontend/static/media/profile-pic.6e4b015bf6667d49385d30416d53d836.svg",
+    "static/media/logo.svg": "/lectury-frontend/static/media/logo.66982cdb6f461444a0b65e6fd9d885de.svg",
+    "static/media/cat.svg": "/lectury-frontend/static/media/cat.1601d6a5c3b7874e97d064852a593867.svg",
+    "static/media/CloudLogo.svg": "/lectury-frontend/static/media/CloudLogo.f3eb7e2869266bb30f5af90f1f067398.svg",
+    "index.html": "/lectury-frontend/index.html",
+    "main.6879d1a2.css.map": "/lectury-frontend/static/css/main.6879d1a2.css.map",
+    "main.860eee3d.js.map": "/lectury-frontend/static/js/main.860eee3d.js.map",
+    "453.04b37f38.chunk.js.map": "/lectury-frontend/static/js/453.04b37f38.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6879d1a2.css",
+    "static/js/main.860eee3d.js"
+  ]
+}
