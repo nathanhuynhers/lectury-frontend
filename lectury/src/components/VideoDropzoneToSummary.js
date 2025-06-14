@@ -11,30 +11,42 @@ const VideoDropzoneToSummary = ({ setSummary, summaryRef }) => {
     const file = acceptedFiles[0];
     if (!file) return;
 
-    const formData = new FormData();
-    formData.append('video', file); // Must match field name in multer
-
     setError('');
     setSummary('');
 
     try {
-      const res = await fetch('/api/upload-video', {
-        method: 'POST',
-        body: formData
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        setSummary(data.summary);
+      // Demo Mode
+      const isDemoMode = true; // Set to false for full functionality of API calls
+      if (isDemoMode) {
+        const mockData = { summary: "This is a mock summary for demonstration purposes. Summary function works but is disabled for front-end UI design demonstrations! \n\nIn this lecture, the professor provided an overview of the key principles of cognitive psychology, focusing on how humans perceive, process, and remember information. The discussion began with an explanation of attention mechanisms, including selective and divided attention, and how these affect memory formation. The lecture then explored short-term and long-term memory systems, emphasizing the role of encoding strategies and retrieval cues. Real-world examples, such as eyewitness testimony and advertising techniques, were used to illustrate core concepts. The session concluded with a brief overview of common cognitive biases and their impact on decision-making, preparing students for the upcoming unit on problem-solving and reasoning." };
+        setSummary(mockData.summary);
 
         if (summaryRef?.current) {
-          setTimeout(() => {
-            summaryRef.current.scrollIntoView({ behavior: 'smooth' });
-          }, 100);
+            setTimeout(() => {
+                summaryRef.current.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
         }
       } else {
-        setError(data.error || 'Something went wrong.');
+        const formData = new FormData();
+        formData.append('video', file); // Must match field name in multer
+        const res = await fetch('/api/upload-video', {
+          method: 'POST',
+          body: formData
+        });
+  
+        const data = await res.json();
+  
+        if (res.ok) {
+          setSummary(data.summary);
+  
+          if (summaryRef?.current) {
+            setTimeout(() => {
+              summaryRef.current.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+          }
+        } else {
+          setError(data.error || 'Something went wrong.');
+        }
       }
     } catch (err) {
       setError('Failed to upload or transcribe the file.');
